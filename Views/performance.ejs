@@ -1,0 +1,81 @@
+<div>
+    <table class="table-fixed mt-3  border border-sky-300 rounded-lg w-full">
+        <thead>
+        <tr class="bg-green-300 w-full">
+            <th>Employee</th>
+            <th>Reviewer</th>
+            <th>Performance Rating</th><th>Completed</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% performance.forEach(review => { %>
+            <tr class="text-center odd:bg-gray-50 odd:bg-opacity-25 ">
+                <td><%= review.name %></td>
+                <td><%= review.reviewerName %>
+                    
+                    <form action="/users/admin/update/reviewer" method="post">
+                        
+                        <input type="hidden" value="<%=review._id %>" name="id">
+                        <select class="text-sky-600 bg-green-300 rounded-lg"  name="reviewer" required>
+                    <% employees.forEach(emp => { %>
+                        <option value="<%= emp._id %>"><%= emp.name %></option>
+                    <% }); %>
+                  
+                 
+                </select><button type="submit" id="submit" class=" rounded-md w-30 px-1 focus:bg-cyan-600 hover:bg-sky-400 " >update
+                    </button>
+            </form></td> 
+                <td><%= review.rating %><form action="/users/admin/update/rating" method="post">
+                        
+                    <input type="hidden" value="<%=review._id %>"name= 'id'>
+                    
+                    <select class="text-sky-600 bg-green-300 rounded-lg"  name="reviewer" required>
+               
+                    <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option>
+                
+              
+             
+            </select>
+            <button type="submit" id="submit" class=" rounded-md w-30 px-1 focus:bg-cyan-600 hover:bg-sky-400 " >update
+            </button>
+        </form></td>
+        <td><%= review.completed %>
+
+        </td>
+            </tr>
+        <% }); %>
+
+    </tbody>
+    </table>
+</div>
+
+<div class="mt-6">
+    <div>
+        <h3 class="bg-green-300 w-full px-4 ">Add Employee for Rating</h3>
+        
+<form action="/users/admin/addemp/rating" method="post" class="mx-4 mt-3">
+
+
+    <label for="name">Employee</label>
+   
+    <select class="text-sky-600 bg-green-300 rounded-lg"  name="id" required>
+        <% employees.forEach(emp => { %>
+            <option value="<%= emp._id %>"><%= emp.name %></option>
+        <% }); %>
+      
+     
+    </select>
+    <label for="Reviewer">Reviewer</label>
+    <select class="text-sky-600 bg-green-300 rounded-lg"  name="Reviewer" required>
+        <% employees.forEach(emp => { %>
+            <option value="<%= emp._id %>"><%= emp.name %></option>
+        <% }); %>
+      
+     
+    </select>
+      
+    <button type="submit" id="submit" class=" rounded-md w-30 px-1 focus:bg-cyan-600 hover:bg-sky-400 " >submit
+    </button>
+  </form>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="flex flex-col justify-center items-center h-screen font-mono bg-gradient-to-r from-cyan-500 to-green-300">
+    <h1 class="font-bold text-2xl font-sans text-cyan-100">Create account</h1>
+  
+    <form action="/users/create" method="post" class="m-10 hover:shadow-cyan-300 shadow-md  rounded-lg   hover:border-dotted flex flex-col p-10 space-y-3 ">
+        <input type="text" placeholder="name" name="name" class="shadow appearance-none border rounded-lg w-full  px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+       
+        <input type="email" placeholder="email" name="email" class="shadow appearance-none border rounded-lg w-full  px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+        <input type="password" placeholder="password" name="password" class="shadow appearance-none border rounded-lg w-full  px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+        <input type="password" placeholder="confirm password" class="shadow appearance-none border rounded-lg w-full  px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="confirm_password" required>
+      
+        <button type="submit" class="bg-orange-500 place-self-center  rounded-md w-14 px-1 focus:bg-cyan-300 hover:bg-yellow-400">Login</button>
+   
+    </form>
+    
+    </div>

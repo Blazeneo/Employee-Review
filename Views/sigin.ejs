@@ -1,0 +1,17 @@
+<div class="flex flex-col justify-center items-center h-screen font-mono bg-gradient-to-r from-cyan-500 to-green-300">
+  <h1 class="font-bold text-2xl font-sans text-cyan-100">Employee Login</h1>
+
+  <div>
+    <form action="/create-session" method="post" 
+          class="m-10 hover:shadow-cyan-300 shadow-md  rounded-lg   hover:border-dotted flex flex-col p-10 space-y-3 ">
+      <input type="email" placeholder="Email" name="email" class="shadow appearance-none border rounded-lg w-full  px-2 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+      <input type="password" placeholder="Password" name="password" class="rounded-lg px-2 bg-blue-500 text-white" required>
+      <button type="submit" class="bg-orange-500 place-self-center  rounded-md w-14 px-1 focus:bg-cyan-300 hover:bg-yellow-400">Login</button>
+    </form>
+  </div>
+
+  <div class="flex flex-row space-x-3">
+    <a href="/signup" class="bg-orange-500 rounded-md w-15 px-1 focus:bg-cyan-300 hover:bg-yellow-400">Signup</a>
+    <a href="/admin/sigin" class="bg-orange-500 rounded-md w-14 px-1 focus:bg-cyan-300 hover:bg-yellow-400">Admin</a>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+
+
+
+
+
+<table class="table-fixed mt-3  border border-sky-300 rounded-lg w-full">
+<thead >
+    <tr class="bg-green-300 w-full">
+    
+
+        <th>Name</th><th>Admin</th><th>delete</th><th></th>
+    
+    </tr>
+</thead>
+   <tbody>
+<% users.forEach((user )=>{ %>
+<tr class="text-center odd:bg-gray-50 odd:bg-opacity-25 ">
+    <th><%=user.name  %></th><th><%=user.role  %></th><th><a href="/users/admin/delete/<%=user.id%>">delete</a></th> <th><a href="/users/admin/create-admin/<%= user.id %>" class=" rounded-md w-30 px-1 focus:bg-cyan-600 hover:bg-sky-400 "> Make Admin</a></th>
+</tr>
+
+   
+
+
+
+    <%})%></tbody> 
+</table>
+    
